@@ -1,35 +1,42 @@
 ##EJERCICIO 1 
-print("Menu Iterativo")
 msg = """
-a) Dibujar un cuadrado 
-b) Iteración
-c) Mayores de edad
+"Menu Iterativo"
+1) Dibujar un cuadrado 
+2) Identificar que números ingresados son múltiplos de 2
+3) Identificar a los mayores de edad de los elementos ingresados
+4) Salir
 """
-print(msg)
-op=input("Elija una de las siguientes opciones: ")
-if(op =='a' or op =='b'or op=='c'):
-    if op =='a':
+while True:
+    print(msg)
+    op=input("Elija una de las siguientes opciones: ")
+    if op =='1':
         cant=int(input("Ingrese el tamaño del cuadrado: "))
         for f in range(cant):
             print (' * '*(cant))
 
-    elif op =='b':
-        cant=int(input("Ingresa la cantidad de numero a ingresar: "))
+    elif op =='2':
+        cant=int(input("Ingresa la cantidad de números a ingresar: "))
         lista=list()
         for v in range(1,cant+1):
-            x = int(input(f"Ingrese el item {v}:"))
+            x = int(input(f"Ingrese el item #{v}: "))
             lista.append(x)
-       ## print(lista)
+    ## print(lista)
         for v in range(cant):
             if(lista[v] % 2==0):
-                print(f"El item {v+1} es Multipo de 2")
-            else:
-                print(f"El item {v+1} NO es Multipo de 2")
-    elif op =='c':
-        lista=[["Juan",18],["Maria",12],["Hernan",58],["Lhuana",10]]
+                print(f"El item {v+1} cuyo valor es", lista[v] ,"es multiplo de 2")
+    elif op =='3':
+        cant=int(input("Ingresa la cantidad de elementos a ingresar: "))
+        lista=[]
+        for n in range(cant):
+            valor = input(f"#{n+1}. Introduce el nombre:")
+            edad  = int(input(f"#{n+1}. Introduce su edad:"))
+            lista.append([valor,edad])
         print(lista)
-        for v in range(len(lista)):
+        for v in range(cant):
             if (lista[v][1]>=18):
-                print(lista[v][0],"Es mayor de edad")
-else:
-    print("Ingrese una opción válida")
+                print(lista[v][0],"es mayor de edad")
+    elif op=='4':
+        print("¡Hasta luego! Ha sido un placer asistirte")
+        break
+    else:
+        print("Ingrese una opción válida")

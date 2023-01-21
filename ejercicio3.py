@@ -1,18 +1,14 @@
-#Definir una función que retorne
-# el mayor valor
-#al ingresar 2 numeros
-
+#EJERCICIO3: Definir una función que retorne el mayor valor al ingresar 2 numeros 
+numeros = []
+# Ingresamos 2 numeros
+for n in range(2):
+    valor = float(input(f"Introduce el número #{n+1}: "))
+    numeros.append(valor)
 # defino mi función
 def mayor():
-    a=int(input("Ingrese un número: "))
-    b=int(input("Ingrese un número: "))
-    if a>b:
-        return a
-    elif b>a:
-        return b
-    else:
-        print("Error: Valores iguales")
+    mayor = numeros[0]
+    if mayor<numeros[1]:
+        mayor =numeros[1]
+    return f"Mayor valor {mayor}"
 # llamo mi función
-fun=mayor()
-print("Mayor valor:")
-print(fun)
+print(mayor())
